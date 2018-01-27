@@ -35,9 +35,9 @@ def main():
     """ """
     vtc = VarnishTest()
     if 'vtc' in opts_known[0] and opts_known[0].__dict__.get('vtc', False):
-        opt = '-S'
+        opt = '{} -v'.format(opts_known[0].__dict__.get('vtc', False))
     else:
-        opt = ' '.join(opts_known[1])
+        opt = '-S {}'.format(opts_known[1])
 
     r = vtc.execVarnishTest(opt)
 
@@ -176,14 +176,11 @@ class VarnishTest:
     # Summary of VarnishCLI
     def renameVarnishCLI(self, data, ret, idx):
         if data['subcomp'] == 'CLI RX':
-            data['aliassubcomp'] = 'CLI:'
-            + data['comp'] + ' <- ' + data['comp']
+            data['aliassubcomp'] = 'CLI:' + data['comp'] + ' <- ' + data['comp']
         elif data['subcomp'] == 'CLI RX:RES':
-            data['aliassubcomp'] = 'CLI:'
-            + data['comp'] + ' <- ' + data['comp'] + "(Result)"
+            data['aliassubcomp'] = 'CLI:' + data['comp'] + ' <- ' + data['comp'] + "(Result)"
         else:
-            data['aliassubcomp'] = 'CLI:'
-            + data['comp'] + ' -> ' + data['comp']
+            data['aliassubcomp'] = 'CLI:' + data['comp'] + ' -> ' + data['comp']
         return 0
 
     # Summary of EXPECT
