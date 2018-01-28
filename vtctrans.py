@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# vtctrans, Re-format tool for varnishtest: https://github.com/xcir/vtctrans
+# vtctrans.py 0.0-alpha2-varnish30 - Shohei Tanaka
+# Copyright (c) 2013 Shohei Tanaka(@xcir)
+
+# vtctrans.py 0.1 - Cleber J Santos: https://github.com/cleberjsantos/vtctrans
+# Refactor Cleber J Santos(@cleberjsantos)
+
 import os
 import re
 import copy
