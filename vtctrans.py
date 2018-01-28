@@ -753,7 +753,7 @@ def dump(obj):
     '''return a printable representation of an object for debugging'''
     newobj = obj
     if isinstance(obj, list):
-        # リストの中身を表示できる形式にする
+        # Make the contents of the list visible
         newobj = []
         for item in obj:
             newobj.append(dump(item))
